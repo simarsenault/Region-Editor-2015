@@ -250,7 +250,16 @@ namespace Region_Editor
                 RegionTag tag = (RegionTag)facetView.SelectedNode.Tag;
                 Region r = tag.Parent;
 
-                if (tag.Reference == "golocation")
+                if(tag.Reference == "regionnode")
+				{
+					if(facetView.SelectedNode.IsExpanded)
+					{
+						mapDisplay.HighlightedRegion.Clear();
+						
+						FindRegionRecursivly(facetView.SelectedNode);
+					}
+				}
+				else if (tag.Reference == "golocation")
                 {
                     mapDisplay.HighlightedArea = new Rectangle(r.GoLocation.X, r.GoLocation.Y, 1, 1);
                     GotoLocation(r.GoLocation.X, r.GoLocation.Y);
@@ -271,6 +280,37 @@ namespace Region_Editor
             }
         }
 
+        private void FindRegionRecursivly(TreeNode oParentNode)
+		{
+			foreach(TreeNode oSubNode in oParentNode.Nodes)
+			{
+				RegionTag tag = (RegionTag)oSubNode.Tag;
+				Region r = tag.Parent;
+				
+				if(r!=null)
+				{
+					foreach(RegionArea ra in r.Area)
+					{
+						mapDisplay.HighlightedRegion.Add(ra.Area);
+					}
+					
+					foreach(Region rg in r.Regions)
+					{
+						foreach(RegionArea ra in rg.Area)
+						{
+							mapDisplay.HighlightedRegion.Add(ra.Area);
+						}
+					}
+					
+					GotoLocation(r.GoLocation.X, r.GoLocation.Y);
+					
+					return;
+				}
+				
+				FindRegionRecursivly(oSubNode);
+			}
+		}
+        
         private void facetView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             if (facetView.SelectedNode != null)
