@@ -263,7 +263,10 @@ namespace Region_Editor
                 else if (tag.Reference == "regionarea")
                 {
                     mapDisplay.HighlightedArea = r.Area[tag.Index].Area;
-                    GotoLocation(r.Area[tag.Index].Area.X, r.Area[tag.Index].Area.Y, false);
+                    
+                    bool center = mapDisplay.HighlightedArea.Width<mapDisplay.TileWidth && mapDisplay.HighlightedArea.Height<mapDisplay.TileWidth;
+                    
+                    GotoLocation(r.Area[tag.Index].Area.X, r.Area[tag.Index].Area.Y, center);
                 }
             }
         }
