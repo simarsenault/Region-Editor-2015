@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using Ultima;
 
@@ -7,20 +7,20 @@ namespace Region_Editor
 {
     public class Cache
     {        
-        private static Hashtable TileCache = new Hashtable();
+        private static Dictionary<int,TileInfo> TileCache = new Dictionary<int,TileInfo>();
 
         public static Color GetColor(int id)
         {
-            if (TileCache[id] != null)
-                return ((TileInfo)TileCache[id]).Color;
+             if(TileCache.ContainsKey(id))
+                return TileCache[id].Color;
             else
                 return InitializeTile(id).Color;
         }
 
         public static Bitmap GetTile(int id, int scale)
         {
-            if (TileCache[id] != null)
-                return ((TileInfo)TileCache[id]).Images[scale];
+             if(TileCache.ContainsKey(id))
+                return TileCache[id].Images[scale];
             else
                 return InitializeTile(id).Images[scale];
         }
@@ -50,7 +50,7 @@ namespace Region_Editor
             images[6] = RotateTile(bmp, -45, 30, 30);
 
             TileInfo ti = new TileInfo(c, images);
-            TileCache[id] = ti;
+            TileCache.Add(id,ti);
 
             bmp.Dispose();
 

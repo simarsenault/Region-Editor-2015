@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -97,7 +97,7 @@ namespace Region_Editor
             }
         }
 
-        private Hashtable MapCoordinates = new Hashtable();
+       private Dictionary<Rectangle,Point> MapCoordinates = new Dictionary<Rectangle,Point>();
         private bool LeftMousePressed = false;
         private Point HighlightBegin = new Point(-1, -1);
         private Point HighlightEnd = new Point(-1, -1);
@@ -125,7 +125,7 @@ namespace Region_Editor
 
             bool tilesHighlite = false;
             pe.Graphics.Clear(Color.Black);
-            MapCoordinates = new Hashtable();
+            MapCoordinates = new Dictionary<Rectangle,Point>();
 
             for (int x = 0; x < _TileWidth; x++)
             {
@@ -178,16 +178,11 @@ namespace Region_Editor
         {
             Point coord = new Point(-1,-1);
 
-            foreach (DictionaryEntry entry in MapCoordinates)
-            {
-                if (entry.Key is Rectangle && ((Rectangle)entry.Key).Contains(e.Location))
-                {
-                    if (entry.Value is Point)
-                    {
-                        coord = new Point(((Point)entry.Value).X, ((Point)entry.Value).Y);
-                    }
-                }
-            }
+            foreach(KeyValuePair<Rectangle,Point> kvp in MapCoordinates)
+			{
+				if(kvp.Key.Contains(e.Location))
+					coord = kvp.Value;
+			}
 
             LastClicked = coord;
 
@@ -238,39 +233,36 @@ namespace Region_Editor
 
         protected override void OnMouseMove(MouseEventArgs e)
         {
-            foreach (DictionaryEntry entry in MapCoordinates)
-            {
-                if (entry.Key is Rectangle && ((Rectangle)entry.Key).Contains(e.Location))
-                {
-                    if (entry.Value is Point)
-                    {
-                        Point coord = new Point(((Point)entry.Value).X, ((Point)entry.Value).Y);
+            foreach(KeyValuePair<Rectangle,Point> kvp in MapCoordinates)
+			{
+				if(kvp.Key.Contains(e.Location))
+				{
+					Point coord = kvp.Value;
+					
+					if (coord != _Hover_Coordinate)
+					{
+						_Hover_Coordinate = coord;
 
-                        if (coord != _Hover_Coordinate)
-                        {
-                            _Hover_Coordinate = coord;
+						if (HoverCoordinatedChanged != null)
+							HoverCoordinatedChanged(this, new EventArgs());
+					}
 
-                            if (HoverCoordinatedChanged != null)
-                                HoverCoordinatedChanged(this, new EventArgs());
-                        }
+					if (LeftMousePressed)
+					{
+						if (HighlightBegin.X == -1)
+							HighlightBegin = coord;
 
-                        if (LeftMousePressed)
-                        {
-                            if (HighlightBegin.X == -1)
-                                HighlightBegin = coord;
+						HighlightEnd = coord;
 
-                            HighlightEnd = coord;
+						Point start = new Point(HighlightBegin.X, HighlightBegin.Y);
+						Point end = new Point(HighlightEnd.X, HighlightEnd.Y);
+						FixPoints(ref start, ref end);
+						_HighlightedArea = new Rectangle(start.X, start.Y, end.X - start.X + 1, end.Y - start.Y + 1);
 
-                            Point start = new Point(HighlightBegin.X, HighlightBegin.Y);
-                            Point end = new Point(HighlightEnd.X, HighlightEnd.Y);
-                            FixPoints(ref start, ref end);
-                            _HighlightedArea = new Rectangle(start.X, start.Y, end.X - start.X + 1, end.Y - start.Y + 1);
-
-                            Invalidate();
-                        }
-                    }
-                }
-            }
+						Invalidate();
+					}
+				}
+			}
 
             base.OnMouseMove(e);
         }
