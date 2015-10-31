@@ -6,8 +6,7 @@ using Ultima;
 namespace Region_Editor
 {
     public class Cache
-    {
-        private static Hashtable MapCache = new Hashtable();
+    {        
         private static Hashtable TileCache = new Hashtable();
 
         public static Color GetColor(int id)
