@@ -79,8 +79,6 @@ namespace Region_Editor
 						break;
 				}
 
-				_TileWidth = Width / ScaledSize;
-
 				Invalidate();
 			}
 		}
@@ -114,8 +112,7 @@ namespace Region_Editor
 		private Point LastClicked = new Point(-1, -1);
 		private int ScaledSize = 30;
 
-		private int _TileWidth = 18;
-		public int TileWidth { get { return _TileWidth; } }
+		public int TileWidth { get { return Width / ScaledSize; } }
 
 		public MapDisplay()
 		{
@@ -138,9 +135,9 @@ namespace Region_Editor
 			pe.Graphics.Clear(Color.Black);
 			MapCoordinates = new Dictionary<Rectangle,Point>();
 
-			for (int x = 0; x < _TileWidth; x++)
+			for (int x = 0; x < TileWidth; x++)
 			{
-				for (int y = 0; y < _TileWidth; y++)
+				for (int y = 0; y < TileWidth; y++)
 				{
 					int upperX = x * ScaledSize;
 					int upperY = y * ScaledSize;

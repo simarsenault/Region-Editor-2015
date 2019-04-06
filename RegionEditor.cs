@@ -1023,5 +1023,10 @@ namespace Region_Editor
         }
 
         #endregion
+
+        private void RegionEditor_ResizeEnd(object sender, EventArgs e)
+        {
+            mapDisplay?.Refresh();
+        }
     }
 }

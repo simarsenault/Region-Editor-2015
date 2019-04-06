@@ -153,6 +153,7 @@
             // 
             // facetList
             // 
+            this.facetList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.facetList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.facetList.FormattingEnabled = true;
             this.facetList.Items.AddRange(new object[] {
@@ -171,6 +172,7 @@
             // 
             // ShowMapButton
             // 
+            this.ShowMapButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ShowMapButton.Location = new System.Drawing.Point(761, 30);
             this.ShowMapButton.Name = "ShowMapButton";
             this.ShowMapButton.Size = new System.Drawing.Size(75, 23);
@@ -182,6 +184,7 @@
             // 
             // renderProgress
             // 
+            this.renderProgress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.renderProgress.Location = new System.Drawing.Point(842, 30);
             this.renderProgress.Name = "renderProgress";
             this.renderProgress.Size = new System.Drawing.Size(157, 23);
@@ -190,6 +193,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 622);
             this.label2.Name = "label2";
@@ -199,6 +203,7 @@
             // 
             // locationLabel
             // 
+            this.locationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.locationLabel.AutoSize = true;
             this.locationLabel.Location = new System.Drawing.Point(69, 622);
             this.locationLabel.Name = "locationLabel";
@@ -208,6 +213,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(388, 622);
             this.label3.Name = "label3";
@@ -217,6 +223,8 @@
             // 
             // facetView
             // 
+            this.facetView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.facetView.Location = new System.Drawing.Point(601, 57);
             this.facetView.Name = "facetView";
             this.facetView.Size = new System.Drawing.Size(398, 513);
@@ -227,6 +235,7 @@
             // 
             // newRegion
             // 
+            this.newRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.newRegion.Location = new System.Drawing.Point(601, 570);
             this.newRegion.Name = "newRegion";
             this.newRegion.Size = new System.Drawing.Size(95, 23);
@@ -238,6 +247,7 @@
             // 
             // modifyRegion
             // 
+            this.modifyRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.modifyRegion.Enabled = false;
             this.modifyRegion.Location = new System.Drawing.Point(803, 570);
             this.modifyRegion.Name = "modifyRegion";
@@ -250,6 +260,7 @@
             // 
             // removeRegion
             // 
+            this.removeRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.removeRegion.Enabled = false;
             this.removeRegion.Location = new System.Drawing.Point(904, 570);
             this.removeRegion.Name = "removeRegion";
@@ -262,6 +273,7 @@
             // 
             // addSpawn
             // 
+            this.addSpawn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.addSpawn.Enabled = false;
             this.addSpawn.Location = new System.Drawing.Point(601, 595);
             this.addSpawn.Name = "addSpawn";
@@ -274,6 +286,7 @@
             // 
             // removeSpawn
             // 
+            this.removeSpawn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.removeSpawn.Enabled = false;
             this.removeSpawn.Location = new System.Drawing.Point(803, 595);
             this.removeSpawn.Name = "removeSpawn";
@@ -286,6 +299,7 @@
             // 
             // addSubRegion
             // 
+            this.addSubRegion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.addSubRegion.Enabled = false;
             this.addSubRegion.Location = new System.Drawing.Point(702, 570);
             this.addSubRegion.Name = "addSubRegion";
@@ -298,6 +312,7 @@
             // 
             // addArea
             // 
+            this.addArea.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.addArea.Enabled = false;
             this.addArea.Location = new System.Drawing.Point(904, 595);
             this.addArea.Name = "addArea";
@@ -310,6 +325,7 @@
             // 
             // removeArea
             // 
+            this.removeArea.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.removeArea.Enabled = false;
             this.removeArea.Location = new System.Drawing.Point(702, 620);
             this.removeArea.Name = "removeArea";
@@ -322,6 +338,7 @@
             // 
             // areaModify
             // 
+            this.areaModify.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.areaModify.Enabled = false;
             this.areaModify.Location = new System.Drawing.Point(601, 620);
             this.areaModify.Name = "areaModify";
@@ -334,6 +351,7 @@
             // 
             // modifySpawn
             // 
+            this.modifySpawn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.modifySpawn.Enabled = false;
             this.modifySpawn.Location = new System.Drawing.Point(702, 595);
             this.modifySpawn.Name = "modifySpawn";
@@ -346,6 +364,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(154, 621);
             this.label4.Name = "label4";
@@ -355,6 +374,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(213, 621);
             this.label5.Name = "label5";
@@ -364,6 +384,7 @@
             // 
             // goButton
             // 
+            this.goButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.goButton.Location = new System.Drawing.Point(271, 616);
             this.goButton.Name = "goButton";
             this.goButton.Size = new System.Drawing.Size(32, 23);
@@ -374,6 +395,7 @@
             // 
             // clearFacet
             // 
+            this.clearFacet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.clearFacet.Location = new System.Drawing.Point(904, 620);
             this.clearFacet.Name = "clearFacet";
             this.clearFacet.Size = new System.Drawing.Size(95, 23);
@@ -386,6 +408,7 @@
             // goY
             // 
             this.goY.AllowedChars = "1234567890";
+            this.goY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.goY.Location = new System.Drawing.Point(233, 617);
             this.goY.MaxLength = 4;
             this.goY.Name = "goY";
@@ -395,6 +418,7 @@
             // goX
             // 
             this.goX.AllowedChars = "1234567890";
+            this.goX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.goX.Location = new System.Drawing.Point(174, 617);
             this.goX.MaxLength = 4;
             this.goX.Name = "goX";
@@ -403,6 +427,7 @@
             // 
             // scaleSlider
             // 
+            this.scaleSlider.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.scaleSlider.Location = new System.Drawing.Point(452, 617);
             this.scaleSlider.Maximum = 6;
             this.scaleSlider.MaximumSize = new System.Drawing.Size(1000, 22);
@@ -416,8 +441,9 @@
             // 
             // ySlider
             // 
+            this.ySlider.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ySlider.Location = new System.Drawing.Point(558, 30);
-            this.ySlider.MaximumSize = new System.Drawing.Size(22, 1000);
             this.ySlider.MinimumSize = new System.Drawing.Size(22, 100);
             this.ySlider.Name = "ySlider";
             this.ySlider.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -430,8 +456,9 @@
             // 
             // xSlider
             // 
+            this.xSlider.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.xSlider.Location = new System.Drawing.Point(12, 576);
-            this.xSlider.MaximumSize = new System.Drawing.Size(1024, 22);
             this.xSlider.MinimumSize = new System.Drawing.Size(100, 22);
             this.xSlider.Name = "xSlider";
             this.xSlider.Size = new System.Drawing.Size(540, 22);
@@ -443,6 +470,10 @@
             // 
             // mapDisplay
             // 
+            this.mapDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mapDisplay.HighlightedRegion = ((System.Collections.Generic.List<System.Drawing.Rectangle>)(resources.GetObject("mapDisplay.HighlightedRegion")));
             this.mapDisplay.Location = new System.Drawing.Point(12, 30);
             this.mapDisplay.MapScale = Region_Editor.Scaling.Scale30;
             this.mapDisplay.Name = "mapDisplay";
@@ -485,14 +516,12 @@
             this.Controls.Add(this.facetList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "RegionEditor";
             this.Text = "Region Editor v2.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegionEditor_FormClosing);
+            this.ResizeEnd += new System.EventHandler(this.RegionEditor_ResizeEnd);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mapDisplay)).EndInit();
